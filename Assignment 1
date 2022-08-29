@@ -1,0 +1,24 @@
+//Create a basic server and display list of movies
+
+const http = require('http')
+
+const server = http.createServer(function ( req, res ){
+    console.log("A new request has been made");
+    const movies = [
+        'Inception',
+        'The Matrix',
+        'World war Z',
+        'Jurassic World Dominion',
+        'Avengers-Infinity War',
+        'Avengers-End Game',
+        'Murder On The Orient Express',
+        'Shutter Island',
+        'The Prestige',
+        'The Dark Knight',
+    ];
+    res.end(JSON.stringify(movies));
+});
+
+server.listen(4000,function(){
+    console.log("Server is running on port 4000");
+});
